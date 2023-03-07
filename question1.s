@@ -1,7 +1,7 @@
 		AREA Asn5, CODE, READONLY
 		ENTRY
-		NOP					; do nothing so I can call DCB first
-UPC	 	DCB "060383755577" 	; UPC code			
+		NOP
+UPC	 	DCB "060383755577" 	; UPC code					
 		ADR r0,UPC 			; point r0 to UPC, address of the current character from the UPC being accessed
 		LDR r1,=-0x480		; check sum, -1152 accounts for the 0x30s in front of our ascii numerals, we add 6*0x30*3 for even bytes, 6*0x30 for odd bytes, 6*0x30*3+6*0x30 = 0x480 = 1152 
 		ADD r2,r0,#12 		; where the loop finishes, 12 characters total, 6 odd, 6 even
@@ -18,4 +18,3 @@ Mod10	SUBS r1,r1,#10 		; subtract 10 from r1 and set flags, looking for Z flag t
 		MOVEQ r0,#1 		; set r0 to true if we have r1 = 0, which means the check sum is divisible by 10
 		BPL Mod10 			; continue the loop while r1 is positive or 0, which means exit when negative
 		END
-			
