@@ -9,7 +9,7 @@ Loop	LDRB r4,[r0] 		; put even numbers(s) in r4 0,2,4,6,8,10
 		LDRB r5,[r0,#1] 	; put odd number(s) in r4 1,3,5,7,9,11
 		ADD r4,r4,r4,LSL#1 	; multiply the even number (r4) by 3
 		ADD r1,r1,r4 		; add even byte to check sum
-		ADD r1,r1,r5 		; add odd byte to check sum, note that the check digit is included here and added as an odd byte
+		ADD r1,r1,r5 		; add odd byte to check sum, note that the check digit is included here and added as an odd number
 		ADDS r0,r0,#2 		; increment by 2 since we're loading 2 bytes at once
 		CMP r0,r2	 		; check if we're still in the loop
 		BNE Loop
