@@ -16,5 +16,5 @@ Loop	LDRB r4,[r0] 		; even byte(s) 0,2,4,...
 Mod10	SUBS r1,r1,#10 		; subtract 10 from r1 and set flags, looking for Z flag to set r0 to 1, and N flag to exit loop
 		MOVEQ r0,#1 		; set r0 to true if we have r1 = 0
 		BPL Mod10 			; continue the loop while r1 is positive or 0, which means exit when negative
-UPC	 	DCB "060383755577" 	; UPC code		
+UPC		DCB "060383755577" 	; UPC code		
 		END
