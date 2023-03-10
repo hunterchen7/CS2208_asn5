@@ -15,5 +15,5 @@ Mod10   SUBS r1,r1,#10      ; subtract 10 from r1 and set flags, looking for Z f
         MOVEQ r0,#1         ; set r0 to true if we have r1 = 0, which means the check sum is divisible by 10
         BPL Mod10           ; continue the loop while r1 is positive or 0, which means exit when negative
 Loop    B Loop
-UPC     DCB "065633454712"  ; UPC code
+UPC     DCB "067000104015"  ; UPC code
         END
