@@ -16,6 +16,7 @@ Image Symbol Table
 
     Asn5                                     0x00000000   Section       76  question1.o(Asn5)
     question1.s                              0x00000000   Number         0  question1.o ABSOLUTE
+    UPC                                      0x0000003c   Data          12  question1.o(Asn5)
 
     Global Symbols
 
